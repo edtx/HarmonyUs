@@ -12,43 +12,34 @@ import StoreKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var song: UITextView!
     @IBOutlet weak var shuffleButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var nowPlayingAlbum: UITextView!
-    @IBOutlet weak var nowPlayingArtist: UITextView!
-    @IBOutlet weak var nowPlayingSong: UITextView!
-    
-    
-//    @UILabel!
-//    @IBOutlet weak var nowPlayingItemArtworkImageView: UIImageView!
-//    @IBOutlet weak var nowPlayingItemArtistLabel: UILabel!
-//    @IBOutlet weak var nowPlayingItemAlbumLabel: UILabel!
-    
-    
-    
-    
+    @IBOutlet weak var nowPlayingItemLabel: UILabel!
+    @IBOutlet weak var nowPlayingItemArtworkImageView: UIImageView!
+    @IBOutlet weak var nowPlayingItemArtistLabel: UILabel!
+    @IBOutlet weak var nowPlayingItemAlbumLabel: UILabel!
     
     let sPlayer = MPMusicPlayerController.systemMusicPlayer()
+    @IBOutlet weak var artistLabel: UITextView!
+    @IBOutlet weak var albumLabel: UITextView!
+    @IBOutlet weak var songView: AnyObject!
+    @IBOutlet weak var songLabel: UITextView!
     
     @IBAction func actionButton(sender: UIButton) {
         let currentTitle = sender.currentTitle ; print(currentTitle)
         
         switch currentTitle! {
         
-        case "NEXT":
+        case "FORWARD":
             sPlayer.skipToNextItem()
             playPauseButton.setTitle("PAUSE", forState: .Normal)
         
-        case "Shuffle":
-            sPlayer.setQueueWithQuery(MPMediaQuery.songsQuery())
-            sPlayer.shuffleMode = .Songs
-            sPlayer.play()
-            playPauseButton.setTitle("PAUSE", forState: .Normal)
-        
-        case "BACK":
+        case "REWIND":
             sPlayer.skipToPreviousItem()
+            playPauseButton.setTitle("PAUSE", forState: .Normal)
         
         case "PLAY":
             sPlayer.play()

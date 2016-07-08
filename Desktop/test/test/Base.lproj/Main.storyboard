@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DPY-5f-W6W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--MusicPlayerController-->
+        <!--ViewController-->
         <scene sceneID="4rL-Ej-Odz">
             <objects>
-                <viewController title="MusicPlayerController" id="DPY-5f-W6W" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="DPY-5f-W6W" userLabel="ViewController" customClass="ViewController" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DyC-cu-mT0"/>
                         <viewControllerLayoutGuide type="bottom" id="ltp-3b-Ril"/>
@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQd-Lx-c4g">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQd-Lx-c4g">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="VQd-Lx-c4g" secondAttribute="height" multiplier="1:1" id="JHA-aa-KqY"/>
@@ -37,39 +37,55 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Song" translatesAutoresizingMaskIntoConstraints="NO" id="VPx-i4-yu8">
-                                <rect key="frame" x="20" y="14" width="560" height="68"/>
-                                <color key="backgroundColor" red="0.42781608040000002" green="0.73959959470000003" blue="1" alpha="0.90140086210000003" colorSpace="calibratedRGB"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Artist" translatesAutoresizingMaskIntoConstraints="NO" id="OdV-Z2-Iyu">
-                                <rect key="frame" x="20" y="90" width="560" height="24"/>
-                                <color key="backgroundColor" red="0.25098039220000001" green="0.1843137255" blue="0.25098039220000001" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Album" translatesAutoresizingMaskIntoConstraints="NO" id="KTW-t5-a8O">
-                                <rect key="frame" x="20" y="122" width="560" height="20"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sEW-ZJ-kzR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sEW-ZJ-kzR">
                                 <rect key="frame" x="20" y="150" width="560" height="300"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Artist" translatesAutoresizingMaskIntoConstraints="NO" id="VPx-i4-yu8">
+                                <rect key="frame" x="20" y="79" width="560" height="26"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Album" translatesAutoresizingMaskIntoConstraints="NO" id="OdV-Z2-Iyu">
+                                <rect key="frame" x="20" y="113" width="560" height="29"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJW-fY-gXk">
+                                <rect key="frame" x="277" y="501" width="46" height="30"/>
+                                <state key="normal" title="PLAY"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zok-26-XOv">
+                                <rect key="frame" x="331" y="501" width="73" height="30"/>
+                                <state key="normal" title="FORWARD"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5g-ag-Spg">
+                                <rect key="frame" x="211" y="501" width="58" height="30"/>
+                                <state key="normal" title="REWIND"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Song" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P7p-sJ-MDY">
+                                <rect key="frame" x="20" y="20" width="551" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="sEW-ZJ-kzR" firstAttribute="leading" secondItem="VQd-Lx-c4g" secondAttribute="trailing" constant="-580" id="07L-c7-gEe"/>
-                            <constraint firstItem="sEW-ZJ-kzR" firstAttribute="centerX" secondItem="Sat-ON-oyV" secondAttribute="centerX" id="eAp-FK-jmu"/>
                             <constraint firstItem="OdV-Z2-Iyu" firstAttribute="top" secondItem="VPx-i4-yu8" secondAttribute="bottom" constant="8" id="o0R-IA-1DA"/>
-                            <constraint firstItem="sEW-ZJ-kzR" firstAttribute="centerY" secondItem="Sat-ON-oyV" secondAttribute="centerY" id="yCR-10-jFS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="albumLabel" destination="OdV-Z2-Iyu" id="8bM-3L-YmR"/>
+                        <outlet property="artistLabel" destination="VPx-i4-yu8" id="mrg-1n-tpG"/>
+                        <outlet property="song" destination="P7p-sJ-MDY" id="aTl-iM-pnI"/>
+                        <outlet property="songLabel" destination="P7p-sJ-MDY" id="DNN-IG-6EX"/>
+                        <outlet property="songView" destination="P7p-sJ-MDY" id="joj-qs-WJi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIY-L0-jTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
