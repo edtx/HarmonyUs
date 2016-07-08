@@ -16,10 +16,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var nowPlayingItemLabel: UILabel!
-    @IBOutlet weak var nowPlayingItemArtworkImageView: UIImageView!
-    @IBOutlet weak var nowPlayingItemArtistLabel: UILabel!
-    @IBOutlet weak var nowPlayingItemAlbumLabel: UILabel!
+    @IBOutlet weak var nowPlayingAlbum: UITextView!
+    @IBOutlet weak var nowPlayingArtist: UITextView!
+    @IBOutlet weak var nowPlayingSong: UITextView!
+    
+    
+//    @UILabel!
+//    @IBOutlet weak var nowPlayingItemArtworkImageView: UIImageView!
+//    @IBOutlet weak var nowPlayingItemArtistLabel: UILabel!
+//    @IBOutlet weak var nowPlayingItemAlbumLabel: UILabel!
+    
+    
+    
+    
     
     let sPlayer = MPMusicPlayerController.systemMusicPlayer()
     
