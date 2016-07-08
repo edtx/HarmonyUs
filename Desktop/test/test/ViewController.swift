@@ -12,6 +12,8 @@ import StoreKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var shuffleButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var nowPlayingItemLabel: UILabel!
@@ -21,35 +23,23 @@ class ViewController: UIViewController {
     
     let sPlayer = MPMusicPlayerController.systemMusicPlayer()
     
-    //let applePlayer = AppleMusicPlayer()
-    //lazy var lazyPlayer = MPMusicPlayerController.systemMusicPlayer()
-    //let library = MPMediaLibrary.defaultMediaLibrary()    // build a MPMediaPropertyPredicate and MPMediaPropertyQuery to access library
-    //let stateChanged = MPMusicPlayerControllerPlaybackStateDidChangeNotification
-    //var currentIndex = MPMusicPlayerController.systemMusicPlayer().indexOfNowPlayingItem
-    //let allSongItems = MPMediaQuery.songsQuery().items
-    
     @IBAction func actionButton(sender: UIButton) {
         let currentTitle = sender.currentTitle ; print(currentTitle)
         
         switch currentTitle! {
         
         case "NEXT":
-            if sPlayer.playbackState == .Playing {
-                sPlayer.skipToNextItem()
-                print("skip")
-                playPauseButton.setTitle("PAUSE", forState: .Normal)
-            } else if sPlayer.playbackState != .Playing {
-                MPMusicPlayerController.systemMusicPlayer().setQueueWithQuery(MPMediaQuery.songsQuery())
-                MPMusicPlayerController.systemMusicPlayer().shuffleMode = .Songs
-                MPMusicPlayerController.systemMusicPlayer().play()
-                playPauseButton.setTitle("PAUSE", forState: .Normal)
-                print("playingFromNextButtonQuery")
-            }
-            //changing song information/image when sent to next song
-//            nowPlayingItemArtistLabel.text = sPlayer.nowPlayingItem?.albumArtist
-//            nowPlayingItemAlbumLabel.text = sPlayer.nowPlayingItem?.albumTitle
-//            nowPlayingItemArtworkImageView.image = sPlayer.nowPlayingItem?.artwork?.imageWithSize(nowPlayingItemArtworkImageView.bounds.size)
-//            nowPlayingItemLabel.text = sPlayer.nowPlayingItem?.title
+            sPlayer.skipToNextItem()
+            playPauseButton.setTitle("PAUSE", forState: .Normal)
+        
+        case "Shuffle":
+            sPlayer.setQueueWithQuery(MPMediaQuery.songsQuery())
+            sPlayer.shuffleMode = .Songs
+            sPlayer.play()
+            playPauseButton.setTitle("PAUSE", forState: .Normal)
+        
+        case "BACK":
+            sPlayer.skipToPreviousItem()
         
         case "PLAY":
             sPlayer.play()
@@ -63,45 +53,45 @@ class ViewController: UIViewController {
         }
     }
     
-    //lazy var playbackChange = MPMusicPlayerController.systemMusicPlayer()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("loaded")
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.getNowPlayingItem), name: MPMusicPlayerControllerNowPlayingItemDidChangeNotification, object: nil)
-        print("generate")
         sPlayer.beginGeneratingPlaybackNotifications()
-        print("notify set")
     }
     
     deinit {
         sPlayer.endGeneratingPlaybackNotifications()
-        print("playbackNOtifications")
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     func getNowPlayingItem() {
-        print("called getNowPlayingItem")
-        //if sPlayer.playbackState == .Playing { print("isPlaying") }
+        
+        let nowPlayingAlbumArt = sPlayer.nowPlayingItem?.artwork?.imageWithSize(nowPlayingItemArtworkImageView.bounds.size)
+        
         if sPlayer.playbackState == .Playing {
-            print("nowPlayingItem not nil")
-            //nowPlayingItemArtworkImageView.image = sPlayer.nowPlayingItem?[MPMediaItemPropertyArtwork]?.imageWithSize(nowPlayingItemArtworkImageView.bounds.size)
             
-            nowPlayingItemArtistLabel.text = sPlayer.nowPlayingItem?[MPMediaItemPropertyArtist] as? String
-            print("artist")
-            nowPlayingItemAlbumLabel.text = sPlayer.nowPlayingItem?[MPMediaItemPropertyAlbumTitle] as? String
-            nowPlayingItemLabel.text = sPlayer.nowPlayingItem?[MPMediaItemPropertyTitle] as? String
-            //let duration = sPlayer.nowPlayingItem?[MPMediaItemPropertyPlaybackDuration] as? NSNumber
+            nowPlayingItemArtistLabel.text = sPlayer.nowPlayingItem?.albumArtist
+            nowPlayingItemAlbumLabel.text = sPlayer.nowPlayingItem?.albumTitle
+            nowPlayingItemLabel.text = sPlayer.nowPlayingItem?.title
+            
+            if nowPlayingAlbumArt == nil {
+                nowPlayingItemArtworkImageView.image = nowPlayingAlbumArt
+            } else if nowPlayingAlbumArt != nil {
+                nowPlayingItemArtworkImageView.image = UIImage(named: "record")
+            }
         } else if sPlayer.playbackState != .Playing {
-            print("notPlaying")
             MPMusicPlayerController.systemMusicPlayer().setQueueWithQuery(MPMediaQuery.songsQuery())
             MPMusicPlayerController.systemMusicPlayer().shuffleMode = .Songs
             MPMusicPlayerController.systemMusicPlayer().play()
             nowPlayingItemArtistLabel.text = sPlayer.nowPlayingItem?.albumArtist
             print("artistLqabel")
             nowPlayingItemAlbumLabel.text = sPlayer.nowPlayingItem?.albumTitle
-            nowPlayingItemArtworkImageView.image = sPlayer.nowPlayingItem?.artwork?.imageWithSize(nowPlayingItemArtworkImageView.bounds.size)
             nowPlayingItemLabel.text = sPlayer.nowPlayingItem?.title
+            if nowPlayingAlbumArt == nil {
+                nowPlayingItemArtworkImageView.image = UIImage(named: "record")
+            } else if nowPlayingAlbumArt != nil {
+                nowPlayingItemArtworkImageView.image = sPlayer.nowPlayingItem?.artwork?.imageWithSize(nowPlayingItemArtworkImageView.bounds.size)
+            }
         }
     }
 
@@ -110,6 +100,16 @@ class ViewController: UIViewController {
     }
     
 }
+
+
+//lazy var playbackChange = MPMusicPlayerController.systemMusicPlayer()
+
+//let applePlayer = AppleMusicPlayer()
+//lazy var lazyPlayer = MPMusicPlayerController.systemMusicPlayer()
+//let library = MPMediaLibrary.defaultMediaLibrary()    // build a MPMediaPropertyPredicate and MPMediaPropertyQuery to access library
+//let stateChanged = MPMusicPlayerControllerPlaybackStateDidChangeNotification
+//var currentIndex = MPMusicPlayerController.systemMusicPlayer().indexOfNowPlayingItem
+//let allSongItems = MPMediaQuery.songsQuery().items
 
 
 //        if sPlayer.indexOfNowPlayingItem == 9223372036854775807 {

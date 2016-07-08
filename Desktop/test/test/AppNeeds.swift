@@ -13,9 +13,13 @@ import StoreKit
 /*
  
  
- grab list of artists in user's library
+ grab image from Apple Music songs from service (do not know service yet)
  
- grab image from Apple Music songs
+ grab list of artists in user's library, let user search and select artist, start selected artist on shuffle
  
-
+ present queue
+ 
+ build a predicate
+ 
+ 
  */

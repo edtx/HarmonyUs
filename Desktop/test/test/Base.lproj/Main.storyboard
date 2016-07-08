@@ -18,15 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQw-aZ-0kZ">
-                                <rect key="frame" x="228" y="28" width="144" height="39"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" red="0.23137254900000001" green="0.0" blue="0.27134851209999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tNh-sh-nDh">
-                                <rect key="frame" x="120" y="120" width="360" height="360"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tNh-sh-nDh">
+                                <rect key="frame" x="20" y="120" width="560" height="360"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="561" id="V16-le-1re"/>
                                     <constraint firstAttribute="width" constant="360" id="rHj-Kp-iHz"/>
@@ -37,8 +30,8 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fvd-bd-Zlc">
-                                <rect key="frame" x="20" y="532" width="93" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fvd-bd-Zlc">
+                                <rect key="frame" x="254" y="532" width="93" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="PAUSE">
                                     <color key="titleColor" red="0.23137254900000001" green="0.0" blue="0.27134851209999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -47,8 +40,8 @@
                                     <action selector="actionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8dU-qv-hiU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgB-jq-XoG">
-                                <rect key="frame" x="504" y="532" width="76" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgB-jq-XoG">
+                                <rect key="frame" x="355" y="532" width="76" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="NEXT">
                                     <color key="titleColor" red="0.23137254900000001" green="0.0" blue="0.27134851209999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -68,6 +61,31 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" red="0.25098039220000001" green="0.1843137255" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGb-EX-0N8">
+                                <rect key="frame" x="203" y="541" width="40" height="30"/>
+                                <state key="normal" title="BACK"/>
+                                <connections>
+                                    <action selector="actionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xxZ-hk-81p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBk-JJ-w8Q">
+                                <rect key="frame" x="34" y="541" width="65" height="30"/>
+                                <state key="normal" title="SHUFFLE"/>
+                                <connections>
+                                    <action selector="actionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SDg-tO-w9f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alS-SV-cyg">
+                                <rect key="frame" x="527" y="541" width="51" height="30"/>
+                                <state key="normal" title="QUEUE"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQw-aZ-0kZ">
+                                <rect key="frame" x="228" y="28" width="144" height="39"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="0.23137254900000001" green="0.0" blue="0.27134851209999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -98,12 +116,14 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="GGb-EX-0N8" id="4z0-wA-Jmf"/>
                         <outlet property="nextButton" destination="lgB-jq-XoG" id="Z22-hl-Kf1"/>
                         <outlet property="nowPlayingItemAlbumLabel" destination="YV2-u9-8vI" id="zuA-8Y-Lhs"/>
                         <outlet property="nowPlayingItemArtistLabel" destination="UQw-aZ-0kZ" id="dDr-FY-A7U"/>
                         <outlet property="nowPlayingItemArtworkImageView" destination="tNh-sh-nDh" id="EzS-nX-MBI"/>
                         <outlet property="nowPlayingItemLabel" destination="MfM-LR-wFC" id="j8x-1e-Snc"/>
                         <outlet property="playPauseButton" destination="Fvd-bd-Zlc" id="eT6-F2-HHg"/>
+                        <outlet property="shuffleButton" destination="nBk-JJ-w8Q" id="l9c-x5-ChF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
