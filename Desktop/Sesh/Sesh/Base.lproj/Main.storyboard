@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kv2-2H-tSf">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--MusicPlayerViewController-->
+        <scene sceneID="zfz-3X-0GC">
+            <objects>
+                <viewController storyboardIdentifier="MusicPlayerViewController" title="MusicPlayerViewController" automaticallyAdjustsScrollViewInsets="NO" id="kv2-2H-tSf" customClass="MusicPlayerViewController" customModule="Sesh" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="orN-yL-3Bu"/>
+                        <viewControllerLayoutGuide type="bottom" id="34D-Pr-mAW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="backgroundView" id="5xd-tJ-quy" userLabel="view">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="artist" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UM-7H-dQc" userLabel="artist">
+                                <rect key="frame" x="20" y="92" width="741" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="8Xc-HF-1Iz"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" scrollEnabled="NO" editable="NO" text="song that needs to last two lines long is pretty rare if you ask me" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCf-Ui-X9L" userLabel="song">
+                                <rect key="frame" x="20" y="20" width="741" height="64"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fgQ-2M-s59">
+                                <rect key="frame" x="10" y="150" width="580" height="300"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCd-n4-0bP" userLabel="playPause">
+                                <rect key="frame" x="275" y="508" width="50" height="50"/>
+                                <state key="normal" image="Play Filled-50"/>
+                                <state key="disabled" title="play" image="Play Filled-50"/>
+                                <state key="selected" title="pause" image="Pause-50-2"/>
+                                <connections>
+                                    <action selector="controlAction:" destination="kv2-2H-tSf" eventType="touchUpInside" id="aga-2y-IwU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="forward" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHu-mO-yW2" userLabel="forward">
+                                <rect key="frame" x="333" y="508" width="50" height="50"/>
+                                <state key="normal" image="Fast Forward-50-2"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="queue" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvH-UN-XeS" userLabel="queue">
+                                <rect key="frame" x="540" y="508" width="50" height="50"/>
+                                <state key="normal" image="Music Transcript-50"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="back" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSJ-bH-YhT" userLabel="back">
+                                <rect key="frame" x="204" y="508" width="50" height="50"/>
+                                <state key="normal" image="Rewind-50-2"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="shuffle" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeZ-pe-QOW" userLabel="shuffle">
+                                <rect key="frame" x="20" y="508" width="50" height="50"/>
+                                <state key="normal" image="Shuffle Filled-50"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" restorationIdentifier="album" editable="NO" text="album" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDH-Zt-1xg" userLabel="album">
+                                <rect key="frame" x="20" y="116" width="741" height="26"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.75452586206896555" colorSpace="deviceWhite"/>
+                        <constraints>
+                            <constraint firstItem="fCd-n4-0bP" firstAttribute="leading" secondItem="qSJ-bH-YhT" secondAttribute="trailing" constant="21" id="3H7-l2-hck"/>
+                            <constraint firstItem="LeZ-pe-QOW" firstAttribute="top" secondItem="qSJ-bH-YhT" secondAttribute="top" id="40J-XO-iDg"/>
+                            <constraint firstItem="IDH-Zt-1xg" firstAttribute="top" secondItem="gCf-Ui-X9L" secondAttribute="bottom" constant="32" id="6I2-lA-MgA"/>
+                            <constraint firstItem="gCf-Ui-X9L" firstAttribute="leading" secondItem="5xd-tJ-quy" secondAttribute="leadingMargin" id="9HK-Ga-Ycl"/>
+                            <constraint firstItem="6UM-7H-dQc" firstAttribute="trailing" secondItem="IDH-Zt-1xg" secondAttribute="trailing" id="B02-BA-S4W"/>
+                            <constraint firstItem="fCd-n4-0bP" firstAttribute="top" secondItem="HHu-mO-yW2" secondAttribute="top" id="BHI-L7-TkD"/>
+                            <constraint firstItem="fgQ-2M-s59" firstAttribute="centerY" secondItem="5xd-tJ-quy" secondAttribute="centerY" id="Dkh-nS-ryI"/>
+                            <constraint firstItem="fgQ-2M-s59" firstAttribute="centerX" secondItem="5xd-tJ-quy" secondAttribute="centerX" id="LjJ-vV-e0h"/>
+                            <constraint firstItem="gCf-Ui-X9L" firstAttribute="leading" secondItem="6UM-7H-dQc" secondAttribute="leading" id="S0c-2S-xPv"/>
+                            <constraint firstItem="HHu-mO-yW2" firstAttribute="top" secondItem="RvH-UN-XeS" secondAttribute="top" id="V4j-Oe-6Ty"/>
+                            <constraint firstItem="fgQ-2M-s59" firstAttribute="trailing" secondItem="RvH-UN-XeS" secondAttribute="trailing" id="VJs-Sh-if3"/>
+                            <constraint firstItem="fgQ-2M-s59" firstAttribute="top" secondItem="IDH-Zt-1xg" secondAttribute="bottom" constant="8" symbolic="YES" id="W2Z-76-icA"/>
+                            <constraint firstItem="gCf-Ui-X9L" firstAttribute="trailing" secondItem="6UM-7H-dQc" secondAttribute="trailing" id="Zop-uC-ixb"/>
+                            <constraint firstItem="fgQ-2M-s59" firstAttribute="leading" secondItem="5xd-tJ-quy" secondAttribute="leadingMargin" constant="-10" id="a7a-ia-9i1"/>
+                            <constraint firstItem="6UM-7H-dQc" firstAttribute="leading" secondItem="IDH-Zt-1xg" secondAttribute="leading" id="bSp-Bx-w5G"/>
+                            <constraint firstItem="gCf-Ui-X9L" firstAttribute="top" secondItem="orN-yL-3Bu" secondAttribute="bottom" id="d7f-8s-veO"/>
+                            <constraint firstItem="LeZ-pe-QOW" firstAttribute="top" secondItem="fgQ-2M-s59" secondAttribute="bottom" constant="58" id="edf-pX-hf3"/>
+                            <constraint firstItem="6UM-7H-dQc" firstAttribute="top" secondItem="gCf-Ui-X9L" secondAttribute="bottom" constant="8" symbolic="YES" id="gOb-On-9MZ"/>
+                            <constraint firstItem="fgQ-2M-s59" firstAttribute="centerX" secondItem="fCd-n4-0bP" secondAttribute="centerX" id="oRp-4j-ibI"/>
+                            <constraint firstItem="fgQ-2M-s59" firstAttribute="top" secondItem="6UM-7H-dQc" secondAttribute="bottom" constant="33" id="oty-zI-yXx"/>
+                            <constraint firstItem="HHu-mO-yW2" firstAttribute="leading" secondItem="fCd-n4-0bP" secondAttribute="trailing" constant="8" symbolic="YES" id="pVR-Sx-rYc"/>
+                            <constraint firstItem="34D-Pr-mAW" firstAttribute="top" secondItem="LeZ-pe-QOW" secondAttribute="bottom" constant="42" id="pzv-iz-Bgu"/>
+                            <constraint firstItem="IDH-Zt-1xg" firstAttribute="leading" secondItem="LeZ-pe-QOW" secondAttribute="leading" id="ufh-F0-tBx"/>
+                            <constraint firstItem="qSJ-bH-YhT" firstAttribute="top" secondItem="fCd-n4-0bP" secondAttribute="top" id="xRt-tF-WV6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="albumText" destination="6UM-7H-dQc" id="hbS-f3-Mdk"/>
+                        <outlet property="albumView" destination="fgQ-2M-s59" id="woi-U8-Fav"/>
+                        <outlet property="artistText" destination="IDH-Zt-1xg" id="tBB-gN-1n1"/>
+                        <outlet property="backButton" destination="qSJ-bH-YhT" id="mKy-R3-dSI"/>
+                        <outlet property="backgroundView" destination="5xd-tJ-quy" id="JfG-NJ-079"/>
+                        <outlet property="forwardButton" destination="HHu-mO-yW2" id="3bp-E2-wwo"/>
+                        <outlet property="playPauseButton" destination="fCd-n4-0bP" id="dG2-a3-sEb"/>
+                        <outlet property="queueButton" destination="RvH-UN-XeS" id="KqX-4s-IXf"/>
+                        <outlet property="shuffleButton" destination="LeZ-pe-QOW" id="Nar-cE-TSn"/>
+                        <outlet property="songText" destination="gCf-Ui-X9L" id="cif-Yq-eXG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rbj-mO-bOI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071" y="132"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Fast Forward-50-2" width="50" height="50"/>
+        <image name="Music Transcript-50" width="50" height="50"/>
+        <image name="Pause-50-2" width="50" height="50"/>
+        <image name="Play Filled-50" width="50" height="50"/>
+        <image name="Rewind-50-2" width="50" height="50"/>
+        <image name="Shuffle Filled-50" width="50" height="50"/>
+    </resources>
+</document>
